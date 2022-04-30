@@ -6,6 +6,9 @@ Compiler: 15.4
 Sample App: https://github.com/aibo-cora/meliora
 </pre>
 
+<h4> Description </h4>
+  Live streaming is a 1 to many setup where 1 client streams video data to the many watching it. The streamer becomes publisher and the many are subscribers. The MQTT broker that you need to configure is your streaming server that delivers the data to the subscribers.
+
 <h2> Steps to configure your app for live streaming </h2>
 <ol>
 <li> Broker <br><br>
@@ -38,7 +41,8 @@ Sample App: https://github.com/aibo-cora/meliora
   <code>captureSession</code> Configure an <code>AVCaptureSession</code> instance by adding video input. <code>Joint</code> takes care of the audio input and AV output, so you do not need to do anything here. Do not install taps on the microphone in your app, it might result in unexpected behavior. Adding video output is also not needed. The framework will remove it and add another one that is configured to the required specs.
   <br><br>
   <code>delegate</code> Conform an object supplying <code>CVPixelBuffer</code> for your video preview to <code>VideoDisplayDelegate</code>. This object will be receiving sample buffers from the AV capture session you configured. If you are using <code>SwiftUI</code>, make sure you setup a chain of modifiers to convert <code>CMSampleBuffer</code> to <code>Image</code>. Refer to the sample app for a way to do it.
-  </li>
+  
+  The framework does not configure the <code>AVAudioSession</code> singleton and relies on the OS to make it active and grant the necessary category at runtime. The side effects are unknown at this point if you decide to configure it.
 <li style="color:blue"> Joint Session </li>
   <pre>
   jointSession = JointSession(apiKey: "C!9X5&/WPuU(6pp5",
