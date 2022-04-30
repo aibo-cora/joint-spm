@@ -1,4 +1,9 @@
-# joint-spm
+# Joint - video streaming framework
+
+<pre>
+Language: Swift 5.6
+Compiler: 15.4
+</pre>
 
 <h2> Steps to configure your app for live streaming </h2>
 <ol>
