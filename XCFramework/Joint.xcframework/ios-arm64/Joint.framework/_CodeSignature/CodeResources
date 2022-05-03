@@ -4,30 +4,6 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Frameworks/MQTTClient.framework/Info.plist</key>
-		<data>
-		DPGX6NTDZaleVwQ/vE+Ot61cElE=
-		</data>
-		<key>Frameworks/MQTTClient.framework/MQTTClient</key>
-		<data>
-		Wl8eQpT6C4EnEqlUraEncibdLX4=
-		</data>
-		<key>Frameworks/MQTTClient.framework/_CodeSignature/CodeResources</key>
-		<data>
-		9wu1msYptaDCELnYqLLBXfe80LE=
-		</data>
-		<key>Frameworks/SocketRocket.framework/Info.plist</key>
-		<data>
-		gKk1B7gbSZ8iqWn/SFV27eDxFIo=
-		</data>
-		<key>Frameworks/SocketRocket.framework/SocketRocket</key>
-		<data>
-		BnQoN96RaKdE+Yi7kGpm2GZ14mE=
-		</data>
-		<key>Frameworks/SocketRocket.framework/_CodeSignature/CodeResources</key>
-		<data>
-		QZp9Albl+cla+lFkExCRVXfcwP4=
-		</data>
 		<key>Headers/Joint-Swift.h</key>
 		<data>
 		BW4gN688cQRWTMvHNj0wOgr65dI=
@@ -38,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		RpNxJopW1e9pm2ioh6PLFvFQg/w=
+		Zwilc4rELTF8Ekhb+fbgeLbSqyw=
 		</data>
 		<key>Modules/Joint.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
@@ -50,7 +26,7 @@
 		</data>
 		<key>Modules/Joint.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		I7CFqOgcfrycDGEX8a0nt3Pz1oY=
+		M2tH4dupoiT3szt6vLkDY+NtD54=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -59,48 +35,6 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Frameworks/MQTTClient.framework/Info.plist</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			gu8HIrjJgWyfvzllRzZFjvSLkYDyHU3I7Uwg9bMr6lQ=
-			</data>
-		</dict>
-		<key>Frameworks/MQTTClient.framework/MQTTClient</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			m6/bcYdcsJqnmzK6kuuUcHspd4VNZXTQ14SdNrs2eUY=
-			</data>
-		</dict>
-		<key>Frameworks/MQTTClient.framework/_CodeSignature/CodeResources</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			b+bMnxtHLkQ+ljmkYqjdux7n7wHNw8qGLYK9bPJD7ME=
-			</data>
-		</dict>
-		<key>Frameworks/SocketRocket.framework/Info.plist</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			wW1lxYp7nbJG/5UBtl3uTI5uiMrW0wae2F3Ln5qn9Y4=
-			</data>
-		</dict>
-		<key>Frameworks/SocketRocket.framework/SocketRocket</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			earQdAcgjdhL1LFwFGhsjSrls+FdST8r5a+BCdfoexU=
-			</data>
-		</dict>
-		<key>Frameworks/SocketRocket.framework/_CodeSignature/CodeResources</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			3IxZweJBL/0DLdMx4229YGc7X6RGaIj9jtg4NgfZM+c=
-			</data>
-		</dict>
 		<key>Headers/Joint-Swift.h</key>
 		<dict>
 			<key>hash2</key>
@@ -133,7 +67,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2tnNtMdwtpp1Ob3+MpWe6B2QomW77LYUO/CXHMit5Pg=
+			ubmrQKnDrAnEUKe4sN+q9SoVW0I8rijkxK3wgfnS0eo=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
