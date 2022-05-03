@@ -78,3 +78,7 @@ jointSession?.configurePlayer(watching: streamer, using: player)
 <code>watching</code> Active streamer on the network.<br>
 <code>using</code> An instance of <code>AVQueuePlayer</code> in your view.
 
+<h2> Future releases </h2>
+<code>1.1.0</code> Video chat, 1 on 1.<br>
+<code>1.2.0</code> Video conference.<br>
+<code>2.0.0</code> On demand video streaming.<br>
