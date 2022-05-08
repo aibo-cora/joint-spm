@@ -60,7 +60,7 @@ References: https://mqtt.org/
   </pre>
   <br>
   <code>apiKey</code> shown provides basic (free) scopes for live streaming and video conference (future release) applications. <br>
-  <code>delegate</code> is reserved for future use. Use <code>nil</code> for now.
+  <code>delegate</code> is reserved for future use. Use <code>nil</code> for now. <br>
   <code>loggingFlag</code> Set to <code>true</code> to see detailed logs.
   <h4> Publishers </h4>
   <code>jointSession?.$sessionStatus</code> Use this to give feedback to users about the status of the session.<br>
