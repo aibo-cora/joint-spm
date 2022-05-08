@@ -82,3 +82,6 @@ jointSession?.configurePlayer(watching: streamer, using: player)
 <code>1.1.0</code> Video chat, 1 on 1.<br>
 <code>1.2.0</code> Video conference.<br>
 <code>2.0.0</code> On demand video streaming.<br>
+
+<h4>Known Issues</h4>
+- List of streamers does not remove streams that have ended.
