@@ -3,9 +3,13 @@
 <pre>
 Language: Swift 5.6
 Compiler: 15.4
-Dependencies: MQTTClient v0.15.3 (Objective-C), SocketRocker v0.6.0 (Objective-C)
+Dependencies: MQTTClient, SocketRocket
 </pre>
 Sample App: https://github.com/aibo-cora/meliora
+<br>
+MQTTClient v0.15.3 https://github.com/novastone-media/MQTT-Client-Framework
+<br>
+SocketRocket v0.6.0 https://github.com/facebookincubator/SocketRocket
 <br>
 References: https://mqtt.org/
 
