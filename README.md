@@ -3,8 +3,10 @@
 <pre>
 Language: Swift 5.6
 Compiler: 15.4
-Sample App: https://github.com/aibo-cora/meliora
 </pre>
+Sample App: https://github.com/aibo-cora/meliora
+<br>
+References: https://mqtt.org/
 
 <h4> Description </h4>
   Live streaming is a 1 to many setup where 1 client streams video data to the many watching it. The streamer becomes publisher and the many are subscribers. The MQTT broker that you need to configure is your streaming server that delivers the data to the subscribers.
