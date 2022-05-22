@@ -23,7 +23,7 @@ let package = Package(
             dependencies: []),
         .binaryTarget(
             name: "Joint",
-            path: "XCFramework/Joint.xcframework"),
+            path: "xcFramework/Joint.xcframework"),
         .testTarget(
             name: "joint-spmTests",
             dependencies: ["joint-spm"]),
