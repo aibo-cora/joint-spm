@@ -272,6 +272,15 @@ SWIFT_CLASS("_TtC5Joint12JointSession")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+
+@interface JointSession (SWIFT_EXTENSION(Joint))
+/// Call this to validate your API key and determine scopes available.
+///
+/// returns:
+/// Returns <code>true</code> if API key was accepted. Begins client and session configuration.
+- (void)configureClientWithCompletionHandler:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completionHandler;
+@end
+
 @class NSURLSession;
 @class NSURLSessionTask;
 
@@ -283,17 +292,12 @@ SWIFT_CLASS("_TtC5Joint12JointSession")
 @class AVQueuePlayer;
 
 @interface JointSession (SWIFT_EXTENSION(Joint))
-/// Call this to validate your API key and determine scopes available.
-///
-/// returns:
-/// Returns <code>true</code> if API key was accepted. Begins client and session configuration.
-- (void)configureClientWithCompletionHandler:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completionHandler;
 /// Begin Live session.
 /// \param streamer Streamer metadata.
 ///
 - (void)startSessionWithStreamer:(Streamer * _Nonnull)streamer;
 /// Stop Live session.
-- (void)stopSession;
+- (void)stopSessionWithStreamer:(Streamer * _Nonnull)streamer;
 /// Set the player for currently watched stream.
 /// \param streamer Incoming stream’s owner description.
 ///
