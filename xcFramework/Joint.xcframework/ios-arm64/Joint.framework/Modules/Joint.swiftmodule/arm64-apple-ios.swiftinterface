@@ -84,8 +84,10 @@ extension Joint.JointSession {
   @objc final public func configureClient() async throws -> Swift.Bool
   #endif
 
+}
+extension Joint.JointSession {
   @objc final public func startSession(streamer: Joint.Streamer)
-  @objc final public func stopSession()
+  @objc final public func stopSession(streamer: Joint.Streamer)
   @objc final public func configurePlayer(watching streamer: Joint.Streamer, using player: AVFoundation.AVQueuePlayer)
 }
 @objc final public class Broker : ObjectiveC.NSObject {
