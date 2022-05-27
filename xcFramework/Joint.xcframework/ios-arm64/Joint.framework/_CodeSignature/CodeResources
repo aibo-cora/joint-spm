@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/Joint-Swift.h</key>
 		<data>
-		R00NHTA5f2pOi1HwMA67eGTiTcY=
+		X5cLPDOyB9e+1Q/6JKjeRHVbBzw=
 		</data>
 		<key>Headers/Joint.h</key>
 		<data>
@@ -14,19 +14,19 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		TYLfX3PriUSDRV9zt82ENHV8mc8=
+		3e/IMjgVKp/XkDL6+w3Z34vXycI=
 		</data>
 		<key>Modules/Joint.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		EPRnL+6Vz2Js+OMxL37F28+IHEM=
+		DdV3QQSoMjN6N8kkzd3F0nXCrZc=
 		</data>
 		<key>Modules/Joint.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		TLgKIM8LDSOjmJAXgnluLK11+1o=
+		5lbST/L/sz/dSgMWH2AB6IXHilE=
 		</data>
 		<key>Modules/Joint.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		GC2kLodzSM6qIIguOesLLuX3yJc=
+		+HmlwrM25/bAR8aYGxNc+Idv5wQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -39,7 +39,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			vyCVA36O1LsLk0zXRYF71Q8KCAgJM9LQjLBE2A6I+cE=
+			tpIWHYucSMumBqs4wOj34bLVqmUx7CjwjIi0hgCc27E=
 			</data>
 		</dict>
 		<key>Headers/Joint.h</key>
@@ -53,21 +53,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zbOUwvJJ6FieajzI9OhnzVaF6oE32JjQeF9RoKjoRhM=
+			nY99i2z8Brl+7/wUPha459+x3LCoGdB3kM3grcK004Q=
 			</data>
 		</dict>
 		<key>Modules/Joint.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8Jsek+MNpdWrvhLKNIGPOGMFspvF+DFBthZjL18SMCs=
+			mU/YzjUz5dEfx666v+aCS7VxfXPK9LANQmJJg+2AzSM=
 			</data>
 		</dict>
 		<key>Modules/Joint.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			O/YYEpN9Crb0bi9LYd/jni34ArpsXykjC+A5eyK5C+w=
+			8pWgTm8+rvidcmS8vzYlcrKJMaBb7Armr7y0YX7C9V4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
