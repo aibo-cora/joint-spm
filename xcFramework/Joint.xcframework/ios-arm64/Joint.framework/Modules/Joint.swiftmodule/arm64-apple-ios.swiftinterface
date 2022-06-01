@@ -13,27 +13,44 @@ import UIKit
 import VideoToolbox
 import _Concurrency
 @objc public class User : ObjectiveC.NSObject, Swift.Codable, Foundation.ObservableObject {
-  public var name: Swift.String {
+  public var given: Swift.String {
     get
   }
-  public var email: Swift.String {
+  public var family: Swift.String {
     get
   }
-  public func update(name: Swift.String, email: Swift.String)
-  public init(name: Swift.String = "", email: Swift.String = "")
-  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
-  @objc deinit
+  public var id: Swift.String {
+    get
+  }
+  public var rank: Joint.User.UserRank {
+    get
+  }
+  @Combine.Published @_projectedValueProperty($email) public var email: Swift.String {
+    get
+  }
+  public var $email: Combine.Published<Swift.String>.Publisher {
+    get
+  }
+  public func update(first: Swift.String, last: Swift.String, email: Swift.String, appleID: Swift.String, rank: Joint.User.UserRank)
+  public init(first: Swift.String = "", last: Swift.String = "", email: Swift.String = "", appleID: Swift.String = "", rank: Joint.User.UserRank = UserRank(id: 1), createdAt: Foundation.Date = Date())
   public func encode(to encoder: Swift.Encoder) throws
   required public init(from decoder: Swift.Decoder) throws
+  public struct UserRank : Swift.Codable {
+    public init(id: Swift.Int, title: Swift.String? = "basic")
+    public func encode(to encoder: Swift.Encoder) throws
+    public init(from decoder: Swift.Decoder) throws
+  }
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
 }
 @objc public protocol JointSessionDelegate {
 }
 public enum JointSessionError : Swift.Error {
   case none
   case expiredAPIKey(date: Foundation.Date), invalidAPIKey
-  case clientConfiguration
-  case urlFormation, invalidResponse, invalidJSON
+  case clientConfiguration, urlFormation
   case watching(message: Swift.String)
+  case serverError(message: Swift.String)
 }
 @objc final public class JointSession : ObjectiveC.NSObject {
   public enum UserState : Swift.String {
@@ -62,6 +79,7 @@ public enum JointSessionError : Swift.Error {
   final public var $sessionError: Combine.Published<Joint.JointSessionError>.Publisher {
     get
   }
+  public static let apiServer: Swift.String
   @objc public init(apiKey: Swift.String, broker: Joint.Broker, captureComponents: Joint.CaptureComponents, delegate: Joint.JointSessionDelegate?, loggingFlag: Swift.Bool = false)
   @Combine.Published @_projectedValueProperty($activeStreamers) final public var activeStreamers: Swift.Set<Joint.Streamer> {
     get
