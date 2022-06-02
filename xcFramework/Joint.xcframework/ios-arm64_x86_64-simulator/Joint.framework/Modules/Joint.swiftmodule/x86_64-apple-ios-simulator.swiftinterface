@@ -1,0 +1,162 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
+// swift-module-flags: -target x86_64-apple-ios15.4-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Joint
+import AVFoundation
+import AVKit
+import Combine
+import CoreMedia
+import Foundation
+@_exported import Joint
+import MQTTClient
+import Swift
+import UIKit
+import VideoToolbox
+import _Concurrency
+@objc open class User : ObjectiveC.NSObject, Swift.Codable, Foundation.ObservableObject, Swift.Identifiable {
+  public var given: Swift.String {
+    get
+  }
+  public var family: Swift.String {
+    get
+  }
+  public var id: Swift.String {
+    get
+  }
+  public var rank: Joint.User.Rank {
+    get
+  }
+  @Combine.Published @_projectedValueProperty($email) public var email: Swift.String {
+    get
+  }
+  public var $email: Combine.Published<Swift.String>.Publisher {
+    get
+  }
+  public func update(first: Swift.String, last: Swift.String, email: Swift.String, appleID: Swift.String, rank: Joint.User.Rank)
+  public init(first: Swift.String = "", last: Swift.String = "", email: Swift.String = "", appleID: Swift.String = "", rank: Joint.User.Rank = Rank(id: 1), createdAt: Foundation.Date = Date())
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+  public struct Rank : Swift.Codable {
+    public init(id: Swift.Int, title: Swift.String? = "basic")
+    public func encode(to encoder: Swift.Encoder) throws
+    public init(from decoder: Swift.Decoder) throws
+  }
+  public typealias ID = Swift.String
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
+}
+@objc public protocol JointSessionDelegate {
+}
+public enum JointSessionError : Swift.Error {
+  case none
+  case expiredAPIKey(date: Foundation.Date), invalidAPIKey
+  case clientConfiguration, urlFormation
+  case watching(message: Swift.String)
+  case serverError(message: Swift.String)
+}
+@objc final public class JointSession : ObjectiveC.NSObject {
+  public enum UserState : Swift.String {
+    case idle, streamer, watcher
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  @Combine.Published @_projectedValueProperty($userStateValue) final public var userStateValue: Joint.JointSession.UserState {
+    get
+  }
+  final public var $userStateValue: Combine.Published<Joint.JointSession.UserState>.Publisher {
+    get
+  }
+  @Combine.Published @_projectedValueProperty($sessionStatus) final public var sessionStatus: Joint.SessionStatus {
+    get
+  }
+  final public var $sessionStatus: Combine.Published<Joint.SessionStatus>.Publisher {
+    get
+  }
+  @Combine.Published @_projectedValueProperty($sessionError) final public var sessionError: Joint.JointSessionError {
+    get
+  }
+  final public var $sessionError: Combine.Published<Joint.JointSessionError>.Publisher {
+    get
+  }
+  public static let apiServer: Swift.String
+  @objc public init(apiKey: Swift.String, broker: Joint.Broker, captureComponents: Joint.CaptureComponents, delegate: Joint.JointSessionDelegate?, loggingFlag: Swift.Bool = false)
+  @Combine.Published @_projectedValueProperty($activeStreamers) final public var activeStreamers: Swift.Set<Joint.Streamer> {
+    get
+    set
+    _modify
+  }
+  final public var $activeStreamers: Combine.Published<Swift.Set<Joint.Streamer>>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @objc deinit
+}
+extension Joint.JointSession : Foundation.URLSessionTaskDelegate {
+  @objc final public func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didCompleteWithError error: Swift.Error?)
+}
+extension Joint.JointSession {
+  
+  #if compiler(>=5.3) && $AsyncAwait
+  @objc final public func configureClient() async throws -> Swift.Bool
+  #endif
+
+}
+extension Joint.JointSession {
+  @objc final public func startSession(streamer: Joint.Streamer)
+  @objc final public func stopSession(streamer: Joint.Streamer)
+  @objc final public func configurePlayer(watching streamer: Joint.Streamer, using player: AVFoundation.AVQueuePlayer)
+}
+@objc final public class Broker : ObjectiveC.NSObject {
+  @objc public init(ip: Swift.String, port: Swift.UInt32, username: Swift.String, password: Swift.String, isSecure: Swift.Bool = true)
+  @objc deinit
+}
+public enum SessionStatus : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+  case unknown, connecting, connected, failed
+  public static func == (a: Joint.SessionStatus, b: Joint.SessionStatus) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol VideoDisplayDelegate {
+  @objc func processSampleBuffer(buffer: CoreMedia.CMSampleBuffer)
+}
+@objc public class Streamer : Joint.User {
+  @Combine.Published @_projectedValueProperty($isSelected) public var isSelected: Swift.Bool {
+    get
+    set
+    _modify
+  }
+  public var $isSelected: Combine.Published<Swift.Bool>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  public var channel: Swift.String? {
+    get
+  }
+  public init(user: Joint.User, channel: Swift.String, isSelected: Swift.Bool = false)
+  required public init(from decoder: Swift.Decoder) throws
+  override public func encode(to encoder: Swift.Encoder) throws
+  @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
+  @objc override dynamic public var hash: Swift.Int {
+    @objc get
+  }
+  public func description() -> Swift.String
+  @objc deinit
+}
+@objc final public class CaptureComponents : ObjectiveC.NSObject {
+  @objc public init(captureSession: AVFoundation.AVCaptureSession, delegate: Joint.VideoDisplayDelegate?)
+  @objc deinit
+}
+extension Joint.JointSession.UserState : Swift.Equatable {}
+extension Joint.JointSession.UserState : Swift.Hashable {}
+extension Joint.JointSession.UserState : Swift.RawRepresentable {}
+extension Joint.SessionStatus : Swift.Equatable {}
+extension Joint.SessionStatus : Swift.Hashable {}
