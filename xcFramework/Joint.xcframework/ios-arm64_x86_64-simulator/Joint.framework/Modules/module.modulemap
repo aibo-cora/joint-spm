@@ -1,0 +1,11 @@
+framework module Joint {
+  umbrella header "Joint.h"
+
+  export *
+  module * { export * }
+}
+
+module Joint.Swift {
+    header "Joint-Swift.h"
+    requires objc
+}
