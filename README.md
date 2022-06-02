@@ -88,7 +88,10 @@ jointSession?.configurePlayer(watching: streamer, using: player)
 <h2> Future releases </h2>
 <code>1.1.0</code> Video chat, 1 on 1.<br>
 <code>1.2.0</code> Video conference.<br>
+<code>1.3.0</code> Live news type stream where the host can establish a link with 4? other participants and select which one gets the spotlight.<br>
 <code>2.0.0</code> On demand video streaming.<br>
 
 <h4>Known Issues</h4>
-- List of streamers does not remove streams that have ended.
+- If a stream does not explicitly end, it does not get removed from the list on the network. It is just a ghost.
+    Resolution:
+        need to run a task on to track whether data is still coming in
